@@ -1,0 +1,301 @@
+/* ==========================================================
+   NÉBULA MUSIC - ESTILOS DEL PROYECTO
+   ==========================================================
+   Configuración, paleta de colores, reseteo básico y maquetación 
+   para formularios, tarjetas y navegación.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+:root {
+    --bg-color-dark: #131200;      /* Fondo principal modo oscuro */
+    --card-bg-dark: #1e1b2e;        /* Fondo de tarjetas */
+    --input-bg-dark: #2a2640;       /* Fondo de inputs */
+    --text-color-dark: #EDF2F4;    /* Texto principal */
+    --text-muted: #a0a5b5;          /* Texto secundario */
+    --links-color-dark: #EFBDEB;   /* Color normal de enlaces */
+    --links-hover-dark: #8D91C7;   /* Color de enlaces al pasar el mouse */
+    --nav-links: #8d3fd1;          /* Color de enlaces de navegación */
+    --highlight: #EDF67D;          /* Color de acento/resaltados */
+    --danger: #e63946;             /* Color de error/cancelación */
+}
+
+/* Reset básico de márgenes, paddings y modelo de caja */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Enlaces base */
+a {
+    color: var(--links-color-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--links-hover-dark);
+}
+
+/* MENÚ DE NAVEGACIÓN */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(19, 18, 0, 0.9);
+    border-bottom: 1px solid rgba(141, 63, 209, 0.3);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: var(--text-color-dark);
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--nav-links);
+    color: #fff;
+}
+
+/* CABECERA (INDEX) */
+header.principal {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header.principal h1 {
+    margin-top: 1rem;
+    color: var(--highlight);
+}
+
+/* SECCIÓN PRINCIPAL & CONTENEDORES */
+main {
+    flex: 1;
+    padding: 2rem 1rem;
+}
+
+#noticias {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#noticias h2 {
+    color: var(--highlight);
+    margin-bottom: 1.5rem;
+}
+
+#noticias article {
+    background: var(--card-bg-dark);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+/* CONTENEDORES DE AUTENTICACIÓN Y ERROR */
+.auth-container, .error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.auth-card, .error-card {
+    background-color: var(--card-bg-dark);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 550px;
+    border: 1px solid rgba(141, 63, 209, 0.3);
+}
+
+.auth-card h2, .error-card h2 {
+    color: var(--highlight);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* FORMULARIOS */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-color-dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--input-bg-dark);
+    border: 1px solid rgba(237, 242, 244, 0.2);
+    border-radius: 8px;
+    color: var(--text-color-dark);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--nav-links);
+    box-shadow: 0 0 8px rgba(141, 63, 209, 0.4);
+}
+
+.form-group select option {
+    background-color: var(--card-bg-dark);
+    color: var(--text-color-dark);
+}
+
+.help-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* GRUPOS DE RADIO Y CHECKBOX */
+.radio-group {
+    display: flex;
+    gap: 1.25rem;
+    padding: 0.3rem 0;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+    accent-color: var(--nav-links);
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+}
+
+/* BOTONES DE FORMULARIO */
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.form-buttons button,
+.btn-home {
+    flex: 1;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease, background-color 0.3s ease;
+    text-align: center;
+}
+
+.form-buttons button[type="submit"] {
+    background-color: var(--nav-links);
+    color: #ffffff;
+}
+
+.form-buttons button[type="submit"]:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}
+
+.form-buttons button[type="reset"] {
+    background-color: transparent;
+    border: 1px solid var(--text-muted);
+    color: var(--text-color-dark);
+}
+
+.form-buttons button[type="reset"]:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* PÁGINA DE ERROR */
+.error-card {
+    text-align: center;
+}
+
+.error-card h1 {
+    font-size: 5rem;
+    color: var(--highlight);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.error-card p {
+    color: var(--text-muted);
+    margin: 1rem 0 2rem 0;
+}
+
+.btn-home {
+    display: inline-block;
+    background-color: var(--nav-links);
+    color: #fff;
+    padding: 0.75rem 2rem;
+}
+
+.btn-home:hover {
+    background-color: #9d4edd;
+    color: #fff;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: rgba(19, 18, 0, 0.95);
+    border-top: 1px solid rgba(141, 63, 209, 0.2);
+    color: var(--text-muted);
+    margin-top: auto;
+}
+

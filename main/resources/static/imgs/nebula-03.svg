@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <defs>
+    <linearGradient id="nebulaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8d3fd1"/>
+      <stop offset="100%" stop-color="#EFBDEB"/>
+    </linearGradient>
+  </defs>
+  <circle cx="30" cy="30" r="20" fill="url(#nebulaGrad)"/>
+  <path d="M20 30 Q30 15 40 30 T60 30" stroke="#EDF67D" stroke-width="3" fill="none"/>
+  <text x="60" y="38" font-family="'Quicksand', sans-serif" font-size="22" font-weight="bold" fill="#EDF2F4">Nébula</text>
+</svg>
+
